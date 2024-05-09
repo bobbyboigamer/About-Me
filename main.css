@@ -1,0 +1,86 @@
+:root {
+    --background-color: #0a0a0a;
+    --font-family: 'Satoshi', sans-serif;
+    --widget-spacing: 50px;
+    --widget-width: 35%;
+    --widget-margin-top: 50px;
+}
+
+html {
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(Assets/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    isolation: isolate;
+}
+
+html::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: black;
+    opacity: .65;
+}
+
+#container {
+    background-color: rgba(24, 24, 24, 0.65);
+    width: 600px;
+    height: 560px;
+    border-radius: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#name {
+    color: #E8F1F2;
+    text-shadow: 0px 0px 16.5px #ffffff;
+    text-align: center;
+}
+
+#quote {
+    color: #E8F1F2;
+    font-weight: 570;
+    font-size: 20px;
+}
+
+#widgets {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: var(--widget-width);
+    margin-top: var(--widget-margin-top);
+    filter: brightness(0) invert(100%) drop-shadow(#FFFFFF 1px 0 5px) !important;
+
+}
+
+@media (max-width: 600px) {
+    #container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    #widgets {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
